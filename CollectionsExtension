@@ -1,0 +1,1 @@
+fun Collection<Any>?.isNotNullOrEmpty() = this != null && this.isNotEmpty()
