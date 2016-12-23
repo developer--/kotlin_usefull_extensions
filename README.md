@@ -1,2 +1,2 @@
-# kotlin_useful_extensions
+# kotlin useful extensions
 Kotlin useful extensions
