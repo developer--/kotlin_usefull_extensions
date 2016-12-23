@@ -1,5 +1,4 @@
 # kotlin useful extensions
-Kotlin useful extensions
 
 Example of painfull function for adding listener to get view's height, width or any property 
 ```kotlin
