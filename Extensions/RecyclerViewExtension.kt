@@ -1,3 +1,8 @@
+/**
+* The function receives the two sets of items, and another function. This last parameter will be used in areItemsTheSame 
+* to decide whether two items are the same or not.
+*/
+
 fun <T> RecyclerView.Adapter<*>.autoNotify(oldList: List<T>, newList: List<T>, compare: (T, T) -> Boolean) {
     val diff = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
 
@@ -16,3 +21,10 @@ fun <T> RecyclerView.Adapter<*>.autoNotify(oldList: List<T>, newList: List<T>, c
 
     diff.dispatchUpdatesTo(this)
 }
+
+
+// usage example 
+// var items: List<Content> by Delegates.observable(emptyList()) {
+//    prop, oldList, newList ->
+//    autoNotify(oldList, newList) { o, n -> o.id == n.id }
+// }
