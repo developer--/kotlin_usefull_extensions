@@ -12,3 +12,21 @@ fun SharedPreferences.apply(vararg pairs: Pair<String, Any?>) {
         }
     }.apply()
 }
+
+inline fun SharedPreferences.edit(func: SharedPreferences.Editor.() -> Unit) {
+    val editor = edit()
+    editor.func()
+    editor.apply()
+}
+
+fun SharedPreferences.Editor.set(pair: Pair<String, Any>) {
+    if (pair.second is Boolean) {
+        putBoolean(pair.first, pair.second as Boolean)
+    } else if (pair.second is String) {
+        putString(pair.first, pair.second as String)
+    } else if (pair.second is Long){
+        putLong(pair.first,pair.second as Long)
+    } else if (pair.second is Int) {
+        putInt(pair.first, pair.second as Int)
+    }
+}
