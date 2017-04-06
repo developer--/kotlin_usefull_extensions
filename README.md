@@ -1,6 +1,6 @@
 # kotlin useful extensions
 
-<h3><b>Retrofit enqueue in java</b></h3>
+<H3><b>Retrofit enqueue in java</b></H3>
 ```java
 request.enqueue(new Callback<RegisterResponse>() {
        @Override
@@ -16,7 +16,7 @@ request.enqueue(new Callback<RegisterResponse>() {
 ```
 
 
-<h3><b>Kotlin way</b></h3>
+<H3><b>Kotlin way</b></H3>
 ```kotlin
 request.enqueue(callback({ r -> callBack.onResponse(r.body())}, { t -> callBack.onFailed(t.message)}))
 ```
@@ -24,7 +24,7 @@ request.enqueue(callback({ r -> callBack.onResponse(r.body())}, { t -> callBack.
 
 
 
-<h3><b>Example of painfull function in java for adding listener to get view's height and width</b></h3>
+<H3><b>Example of painfull function in java for adding listener to get view's height and width</b></H3>
 ```java
 ViewTreeObserver vto = mView.getViewTreeObserver(); 
 vto.addOnGlobalLayoutListener (new OnGlobalLayoutListener() { 
@@ -38,7 +38,7 @@ vto.addOnGlobalLayoutListener (new OnGlobalLayoutListener() {
 });
 ```
 
-<h3><b>Let's do the same in Kotlin</b></h3>
+<H3><b>Let's do the same in Kotlin</b></H3>
 ```kotlin
 mView.afterMeasured {
   // inside this block the view is completely drawn
