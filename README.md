@@ -1,22 +1,26 @@
 # kotlin useful extensions
 
-Example of painfull function for adding listener to get view's height, width or any property 
+Ex: Retrofit enqueue
 ```kotlin
-inline fun View.afterMeasured(crossinline f: View.() -> Unit) {
-    viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-        override fun onGlobalLayout() {
-            if (measuredHeight > 0 && measuredWidth > 0) {
-                viewTreeObserver.removeOnGlobalLayoutListener(this)
-                f()
-            }
-        }
-    })
-}
+request.enqueue(callback({ r -> callBack.onResponse(r.body())}, { t -> callBack.onFailed(t.message)}))
 ```
 
-after that you can write 
+Example of painfull function in java for adding listener to get view's height and width
 ```java
-mAnyTypeView.afterMeasured {
+ViewTreeObserver vto = mView.getViewTreeObserver(); 
+vto.addOnGlobalLayoutListener (new OnGlobalLayoutListener() { 
+    @Override 
+    public void onGlobalLayout() {
+        layout.getViewTreeObserver().removeOnGlobalLayoutListener(this); 
+        int width  = layout.getMeasuredWidth();
+        int height = layout.getMeasuredHeight(); 
+
+    } 
+});
+```
+
+Let's do the same in Kotlin
+```kotlin
+mView.afterMeasured {
   // inside this block the view is completely drawn
-  // you can get an initialized height, width and e.t.c
 }
