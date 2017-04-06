@@ -1,11 +1,30 @@
 # kotlin useful extensions
 
-Ex: Retrofit enqueue
+<b>Ex: Retrofit enqueue in java</b>
+```java
+request.enqueue(new Callback<RegisterResponse>() {
+       @Override
+       public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response)                 
+              callback.onResponse(response.body());
+       }
+
+       @Override
+       public void onFailure(Call<RegisterResponse> call, Throwable t) {
+            callback.onFailed(t.getMessage());
+       }       
+});
+```
+
+
+<b>Kotlin way</b>
 ```kotlin
 request.enqueue(callback({ r -> callBack.onResponse(r.body())}, { t -> callBack.onFailed(t.message)}))
 ```
 
-Example of painfull function in java for adding listener to get view's height and width
+
+
+
+<b>Example of painfull function in java for adding listener to get view's height and width</b>
 ```java
 ViewTreeObserver vto = mView.getViewTreeObserver(); 
 vto.addOnGlobalLayoutListener (new OnGlobalLayoutListener() { 
@@ -19,7 +38,7 @@ vto.addOnGlobalLayoutListener (new OnGlobalLayoutListener() {
 });
 ```
 
-Let's do the same in Kotlin
+<b>Let's do the same in Kotlin</b>
 ```kotlin
 mView.afterMeasured {
   // inside this block the view is completely drawn
