@@ -16,11 +16,10 @@ request.enqueue(new Callback<RegisterResponse>() {
 ```
 
 
-<b>Kotlin way</b>
+<b>Retrofit enqueue in kotlin</b>
 ```kotlin
 request.enqueue(callback({ r -> callBack.onResponse(r.body())}, { t -> callBack.onFailed(t.message)}))
 ```
-
 
 
 
@@ -43,3 +42,9 @@ vto.addOnGlobalLayoutListener (new OnGlobalLayoutListener() {
 mView.afterMeasured {
   // inside this block the view is completely drawn
 }
+```
+
+
+
+
+#lambdas, #extensions <3
