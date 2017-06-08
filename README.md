@@ -18,7 +18,10 @@ request.enqueue(new Callback<RegisterResponse>() {
 
 <b>Retrofit enqueue in kotlin</b>
 ```kotlin
-request.enqueue(callback({ r -> callBack.onResponse(r.body())}, { t -> callBack.onFailed(t.message)}))
+request.enqueue(callback(
+{ resp -> hendle response here }, 
+{ err -> hendle error here }
+))
 ```
 
 
