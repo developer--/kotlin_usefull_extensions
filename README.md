@@ -47,6 +47,13 @@ mView.afterMeasured {
 }
 ```
 
+```kotlin
+Picasso.with(context).load(imageUrl).into(imageView) {
+    onSuccess {
+        animateImageView()
+    }
+}
+```
 
 
 
