@@ -24,21 +24,6 @@ request.enqueue(callback(
 ))
 ```
 
-
-<b>Picasso in Java</b>
-```Java
-Picasso.with(context).load(imageUrl).into(imageView,
-        object : Callback {
-            override fun onSuccess() {
-                //we are happy here
-            }
-
-            override fun onError() {
-                // bla bla bla
-            }
-        })
-```
-
 <b>Picasso in Kotlin</b>
 ```kotlin
 Picasso.with(context).load(imageUrl).into(imageView) {
