@@ -25,6 +25,30 @@ request.enqueue(callback(
 ```
 
 
+<b>Picasso in Java</b>
+```Java
+Picasso.with(context).load(imageUrl).into(imageView,
+        object : Callback {
+            override fun onSuccess() {
+                animateImageView()
+            }
+
+            override fun onError() {
+                // empty method. (looks ugly)
+            }
+        })
+```
+
+<b>Picasso in Kotlin</b>
+```kotlin
+Picasso.with(context).load(imageUrl).into(imageView) {
+    onSuccess {
+        animateImageView()
+    }
+}
+```
+
+
 
 <b>Example of painfull function in java for adding listener to get view's height and width</b>
 ```java
@@ -44,14 +68,6 @@ vto.addOnGlobalLayoutListener (new OnGlobalLayoutListener() {
 ```kotlin
 mView.afterMeasured {
   // inside this block the view is completely drawn
-}
-```
-
-```kotlin
-Picasso.with(context).load(imageUrl).into(imageView) {
-    onSuccess {
-        animateImageView()
-    }
 }
 ```
 
