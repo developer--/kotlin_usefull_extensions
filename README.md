@@ -31,6 +31,14 @@ Picasso.with(context).load(imageUrl).into(imageView) {
         //we are happier here
     }
 }
+
+// OR more concise
+
+imageView.load(imageUrl) {
+    onSuccess {
+        //we are happier here
+    }
+}
 ```
 
 
