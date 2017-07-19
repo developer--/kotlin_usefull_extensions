@@ -1,6 +1,6 @@
 # kotlin useful extensions
 
-<b>Retrofit enqueue in java</b>
+<b>Retrofit in Java</b>
 ```java
 request.enqueue(new Callback<RegisterResponse>() {
        @Override
@@ -16,7 +16,7 @@ request.enqueue(new Callback<RegisterResponse>() {
 ```
 
 
-<b>Retrofit enqueue in kotlin</b>
+<b>Retrofit in Kotlin</b>
 ```kotlin
 request.enqueue(callback(
    { resp -> hendle response here }, 
