@@ -43,7 +43,7 @@ imageView.load(imageUrl) {
 
 
 
-<b>Example of painfull function in java for adding listener to get view's height and width</b>
+<b>Example of painfull function in Java, add listener to get view's height and width</b>
 ```java
 ViewTreeObserver vto = mView.getViewTreeObserver(); 
 vto.addOnGlobalLayoutListener (new OnGlobalLayoutListener() { 
