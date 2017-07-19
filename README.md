@@ -30,7 +30,7 @@ request.enqueue(callback(
 Picasso.with(context).load(imageUrl).into(imageView,
         object : Callback {
             override fun onSuccess() {
-                animateImageView()
+                //we are happy here
             }
 
             override fun onError() {
@@ -43,7 +43,7 @@ Picasso.with(context).load(imageUrl).into(imageView,
 ```kotlin
 Picasso.with(context).load(imageUrl).into(imageView) {
     onSuccess {
-        animateImageView()
+        //we are happier here
     }
 }
 ```
