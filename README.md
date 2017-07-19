@@ -72,5 +72,19 @@ mView.afterMeasured {
 ```
 
 
+<b>Animation listner (all callbacks are optional ;) )</b>
+```kotlin
+animation.setAnimationListener {
+    onAnimationRepeat {
+        // do something
+    }
 
-#lambdas, #extensions <3
+    onAnimationEnd {
+        // do something
+    }
+    
+    onAnimationStart {
+        // do something
+    }
+}
+```
