@@ -5,12 +5,12 @@
 request.enqueue(new Callback<RegisterResponse>() {
        @Override
        public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response)                 
-              callback.onResponse(response.body());
+             //response hendling goes here
        }
 
        @Override
        public void onFailure(Call<RegisterResponse> call, Throwable t) {
-            callback.onFailed(t.getMessage());
+            //error hendling goes here
        }       
 });
 ```
