@@ -34,7 +34,7 @@ Picasso.with(context).load(imageUrl).into(imageView,
             }
 
             override fun onError() {
-                // empty method. (looks ugly)
+                // bla bla bla
             }
         })
 ```
