@@ -18,15 +18,11 @@ inline fun SharedPreferences.edit(func: SharedPreferences.Editor.() -> Unit) {
     editor.func()
     editor.apply()
 }
-
 fun SharedPreferences.Editor.set(pair: Pair<String, Any>) {
-    if (pair.second is Boolean) {
-        putBoolean(pair.first, pair.second as Boolean)
-    } else if (pair.second is String) {
-        putString(pair.first, pair.second as String)
-    } else if (pair.second is Long){
-        putLong(pair.first,pair.second as Long)
-    } else if (pair.second is Int) {
-        putInt(pair.first, pair.second as Int)
+    when {
+        pair.second is Boolean -> putBoolean(pair.first, pair.second as Boolean)
+        pair.second is String -> putString(pair.first, pair.second as String)
+        pair.second is Long -> putLong(pair.first, pair.second as Long)
+        pair.second is Int -> putInt(pair.first, pair.second as Int)
     }
 }
