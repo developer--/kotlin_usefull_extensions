@@ -1,20 +1,5 @@
 # kotlin useful extensions
 
-<b>Retrofit in Java</b>
-```java
-request.enqueue(new Callback<RegisterResponse>() {
-       @Override
-       public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response)                 
-             //response hendling goes here
-       }
-
-       @Override
-       public void onFailure(Call<RegisterResponse> call, Throwable t) {
-            //error hendling goes here
-       }       
-});
-```
-
 
 <b>Retrofit in Kotlin</b>
 ```kotlin
