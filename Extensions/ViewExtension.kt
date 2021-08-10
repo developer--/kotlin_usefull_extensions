@@ -14,22 +14,13 @@ inline fun View.afterMeasured(crossinline f: View.() -> Unit) {
     })
 }
 
-fun View.stayVisibleOrGone(stay: Boolean) {
-    if (stay) {
-        this.visibility = View.VISIBLE
-    } else {
-        this.visibility = View.GONE
+inline fun View.delayOnLifeCycle(
+        durationInMillis: Long,
+        dispatcher: CoroutineDispatcher = Dispatchers.Main.immediate,
+        crossinline block: () -> Unit
+): Job? = findViewTreeLifecycleOwner()?.let { lifecycleOwner ->
+    lifecycleOwner.lifecycle.coroutineScope.launch(dispatcher) {
+        delay(durationInMillis)
+        block()
     }
-}
-
-fun View.stayVisibleOrInVisible(stay: Boolean) {
-    if (stay) {
-        this.visibility = View.VISIBLE
-    } else {
-        this.visibility = View.INVISIBLE
-    }
-}
-
-fun View.toast(msg: String, toastLength: Int = Toast.LENGTH_SHORT) {
-    Toast.makeText(context, msg, toastLength).show()
 }
